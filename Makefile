@@ -1,8 +1,16 @@
 eslint:
-	npx eslint src
+	npx eslint
 
 prettier:
 	npx prettier --write components/**/*
+	npx prettier --write composables/**/*
+	npx prettier --write layouts/**/*
+	npx prettier --write middleware/**/*
+	npx prettier --write pages/**/*
+	npx prettier --write plugins/**/*
+	npx prettier --write server/**/*
+	npx prettier --write stores/**/*
+	npx prettier --write types/**/*
 
 stylelint:
 	npx stylelint "src/**/*.{css,scss,vue}"

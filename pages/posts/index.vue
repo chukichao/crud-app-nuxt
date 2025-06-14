@@ -37,12 +37,12 @@
 </template>
 
 <script setup lang="ts">
-import { usePostsStore } from '~/stores/posts.ts';
-import { useUIStore } from '~/stores/ui.ts';
+import { usePostsStore } from "~/stores/posts.ts";
+import { useUIStore } from "~/stores/ui.ts";
 
 definePageMeta({
-  layout: 'custom',
-  middleware: 'auth' as any,
+  layout: "custom",
+  middleware: "auth" as any,
 });
 
 const postsStore = usePostsStore();
@@ -50,15 +50,15 @@ const uiStore = useUIStore();
 
 const route = useRoute();
 
-const searchQuery = ref('');
-const selectedSort = ref('');
+const searchQuery = ref("");
+const selectedSort = ref("");
 const sortOptions = reactive([
-  { title: 'by title', value: 'title' },
-  { title: 'by body', value: 'body' },
+  { title: "by title", value: "title" },
+  { title: "by body", value: "body" },
 ]);
 
 const scrollToUp = () => {
-  const heading = document.getElementById('heading');
+  const heading = document.getElementById("heading");
 
   if (heading) {
     heading.scrollIntoView();
@@ -70,8 +70,8 @@ const sortedAndSearchedPosts = computed(() => {
 
   if (selectedSort.value) {
     sortedPosts.sort((post1, post2) =>
-      post1[selectedSort.value as 'title' | 'body'].localeCompare(
-        post2[selectedSort.value as 'title' | 'body'],
+      post1[selectedSort.value as "title" | "body"].localeCompare(
+        post2[selectedSort.value as "title" | "body"],
       ),
     );
   }

@@ -13,7 +13,7 @@
 </template>
 
 <script setup lang="ts">
-defineEmits(['update:modelValue']);
+defineEmits(["update:modelValue"]);
 
 interface IOption {
   title: string;

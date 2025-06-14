@@ -1,10 +1,10 @@
-import { defineStore } from 'pinia';
-import { useUIStore } from './ui.js';
-import { useUserStore } from './user.js';
+import { defineStore } from "pinia";
+import { useUIStore } from "./ui.js";
+import { useUserStore } from "./user.js";
 
-import type { IPost } from '~/types/post.js';
+import type { IPost } from "~/types/post.js";
 
-export const usePostsStore = defineStore('posts', {
+export const usePostsStore = defineStore("posts", {
   state: () => ({
     posts: [] as IPost[],
     page: 1,
@@ -33,7 +33,7 @@ export const usePostsStore = defineStore('posts', {
         );
 
         this.totalPages = Math.ceil(
-          response.value.headers['x-total-count'] / this.limit,
+          response.value.headers["x-total-count"] / this.limit,
         );
 
         if (config.scroll) {

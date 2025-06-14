@@ -1,10 +1,10 @@
-import type { DirectiveBinding } from 'vue';
+import type { DirectiveBinding } from "vue";
 
 export default defineNuxtPlugin((nuxtApp) => {
-  nuxtApp.vueApp.directive('observer', {
+  nuxtApp.vueApp.directive("observer", {
     mounted(el: HTMLElement, binding: DirectiveBinding) {
       const options = {
-        rootMargin: '0px',
+        rootMargin: "0px",
         threshold: 1.0,
       };
 

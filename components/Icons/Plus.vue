@@ -15,6 +15,6 @@
 
 <script>
 export default {
-  name: 'MaterialSymbolsAddCircle',
+  name: "MaterialSymbolsAddCircle",
 };
 </script>

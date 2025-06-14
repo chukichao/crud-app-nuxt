@@ -1,9 +1,9 @@
-import { defineStore } from 'pinia';
-import { useUIStore } from './ui.js';
+import { defineStore } from "pinia";
+import { useUIStore } from "./ui.js";
 
-import type { IComment } from '~/types/comment.js';
+import type { IComment } from "~/types/comment.js";
 
-export const useCommentsStore = defineStore('comments', {
+export const useCommentsStore = defineStore("comments", {
   state: () => ({
     comments: [] as IComment[],
   }),

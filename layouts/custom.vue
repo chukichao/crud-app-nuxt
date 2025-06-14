@@ -5,12 +5,12 @@
 </template>
 
 <script setup lang="ts">
-import { useStorage } from '../composables/useStorage';
+import { useStorage } from "../composables/useStorage";
 
-import { useUserStore } from '~/stores/user.ts';
-import { useUIStore } from '~/stores/ui.ts';
+import { useUserStore } from "~/stores/user.ts";
+import { useUIStore } from "~/stores/ui.ts";
 
-import type { IUser } from '~/types/user.ts';
+import type { IUser } from "~/types/user.ts";
 
 const userStore = useUserStore();
 const uiStore = useUIStore();
@@ -18,14 +18,14 @@ const uiStore = useUIStore();
 const { hasDataLocalStorage } = useStorage();
 
 onMounted(() => {
-  if (!hasDataLocalStorage('database')) {
+  if (!hasDataLocalStorage("database")) {
     localStorage.setItem(
-      'database',
+      "database",
       JSON.stringify({
         users: [
           {
-            username: 'admin',
-            password: 'admin',
+            username: "admin",
+            password: "admin",
             age: 0,
             isAgreeWithRules: true,
             id: String(Math.random()).slice(2),
@@ -35,9 +35,9 @@ onMounted(() => {
     );
   }
 
-  if (hasDataLocalStorage('auth')) {
-    const user = JSON.parse(localStorage.getItem('auth') as string);
-    const database = JSON.parse(localStorage.getItem('database') as string);
+  if (hasDataLocalStorage("auth")) {
+    const user = JSON.parse(localStorage.getItem("auth") as string);
+    const database = JSON.parse(localStorage.getItem("database") as string);
 
     const userData = database.users.find(
       (_user: IUser) => _user.username === user.username,
@@ -46,7 +46,7 @@ onMounted(() => {
     userStore.login(user, userData);
   }
 
-  if (hasDataLocalStorage('cookie')) {
+  if (hasDataLocalStorage("cookie")) {
     uiStore.closeCookieAlert();
   }
 });
