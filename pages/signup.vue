@@ -35,16 +35,17 @@
 						type="password"
 						autocomplete="new-password"
 						:class="(required, confirm)"
-					/><
+					/>
 				</label>
 
 				<div class="form-rules">
-					<label
-						><input
+					<label>
+						<!-- prettier-ignore -->
+						<input
 							v-model="user.isAgreeWithRules"
 							:class="required"
 							type="checkbox"
-						/>
+						>
 						I have read the privacy policy (required)</label
 					>
 				</div>
@@ -54,7 +55,8 @@
 				}}</small>
 			</div>
 
-			<hr style="border-color: bisque" />
+			<!-- prettier-ignore -->
+			<hr style="border-color: bisque" >
 
 			<div class="form-country">
 				<label for="country">Country:</label>
@@ -63,7 +65,7 @@
 						id="country"
 						v-model="user.country"
 						:options="countryOptions"
-					></UISelect>
+					/>
 				</div>
 			</div>
 
@@ -76,14 +78,16 @@
 				Gender:
 				<div>
 					<label>
-						<input v-model="user.gender" type="radio" value="male" />
+						<!-- prettier-ignore -->
+						<input v-model="user.gender" type="radio" value="male" >
 						Male</label
 					>
 				</div>
 
 				<div>
-					<label
-						><input v-model="user.gender" type="radio" value="female" />
+					<label>
+						<!-- prettier-ignore -->
+						<input v-model="user.gender" type="radio" value="female" >
 						Female</label
 					>
 				</div>
@@ -92,22 +96,25 @@
 			<div class="form-skills">
 				Skills:
 				<div>
-					<label
-						><input v-model="user.skills" type="checkbox" value="html" />
+					<label>
+						<!-- prettier-ignore -->
+						<input v-model="user.skills" type="checkbox" value="html" >
 						HTML</label
 					>
 				</div>
 
 				<div>
-					<label
-						><input v-model="user.skills" type="checkbox" value="css" />
+					<label>
+						<!-- prettier-ignore -->
+						<input v-model="user.skills" type="checkbox" value="css" >
 						CSS</label
 					>
 				</div>
 
 				<div>
-					<label
-						><input v-model="user.skills" type="checkbox" value="js" />
+					<label>
+						<!-- prettier-ignore -->
+						<input v-model="user.skills" type="checkbox" value="js" >
 						JS</label
 					>
 				</div>
@@ -119,7 +126,7 @@
 </template>
 
 <script setup lang="ts">
-import { useUserStore } from "~/stores/user.ts";
+import { useUserStore } from "~/stores/user";
 
 const userStore = useUserStore();
 

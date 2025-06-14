@@ -28,18 +28,20 @@ export const usePostsStore = defineStore("posts", {
 					this.page = this.page + 1;
 				}
 
-				const response = await $fetch<any>(
+				const { $axiosPlugin } = useNuxtApp();
+
+				const response = await $axiosPlugin.get(
 					`https://jsonplaceholder.typicode.com/posts?_limit=${this.limit}&_page=${this.page}`,
 				);
 
 				this.totalPages = Math.ceil(
-					response.value.headers["x-total-count"] / this.limit,
+					response.headers["x-total-count"] / this.limit,
 				);
 
 				if (config.scroll) {
-					this.posts = [...this.posts, ...response.value.data];
+					this.posts = [...this.posts, ...response.data];
 				} else {
-					this.posts = response.value.data;
+					this.posts = response.data;
 				}
 			} catch (error) {
 				console.error(error);

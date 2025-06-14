@@ -31,13 +31,13 @@
 </template>
 
 <script setup lang="ts">
-import { usePostsStore } from "~/stores/posts.ts";
-import { useUIStore } from "~/stores/ui.ts";
-import { useCommentsStore } from "~/stores/сomments.ts";
+import { usePostsStore } from "~/stores/posts";
+import { useUIStore } from "~/stores/ui";
+import { useCommentsStore } from "~/stores/сomments";
 
 definePageMeta({
 	layout: "custom",
-	middleware: "auth" as any,
+	middleware: "auth",
 });
 
 const commentsStore = useCommentsStore();

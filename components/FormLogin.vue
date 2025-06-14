@@ -4,8 +4,8 @@
 
 		<form class="form" @submit.prevent="login">
 			<UIInput
-				ref="input"
 				v-model.trim="user.username"
+				v-focus
 				:class="{ ['error-outline']: errorLogin }"
 				autocomplete="username"
 				placeholder="username"
@@ -33,10 +33,10 @@
 </template>
 
 <script setup lang="ts">
-import { useUIStore } from "~/stores/ui.ts";
-import { useUserStore } from "~/stores/user.ts";
+import { useUIStore } from "~/stores/ui";
+import { useUserStore } from "~/stores/user";
 
-import type { IUser } from "~/types/user.ts";
+import type { IUser } from "~/types/user";
 
 const uiStore = useUIStore();
 const userStore = useUserStore();

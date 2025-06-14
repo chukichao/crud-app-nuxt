@@ -1,9 +1,5 @@
-const { hasDataLocalStorage } = useStorage();
-
 export default defineNuxtRouteMiddleware((to) => {
-	const isAuthenticated = hasDataLocalStorage("auth");
-
-	if (isAuthenticated) {
+	if (localStorage.getItem("auth")) {
 		navigateTo(to.fullPath);
 	} else {
 		navigateTo("/");

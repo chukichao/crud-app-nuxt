@@ -13,11 +13,13 @@ export const useCommentsStore = defineStore("comments", {
 			try {
 				uiStore.isLoading = true;
 
-				const { data: comments } = await $fetch<any>(
+				const { $axiosPlugin } = useNuxtApp();
+
+				const response = await $axiosPlugin.get(
 					`https://jsonplaceholder.typicode.com/posts/${id}/comments`,
 				);
 
-				this.comments = comments.value;
+				this.comments = response.data;
 			} catch (error) {
 				console.error(error);
 			} finally {

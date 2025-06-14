@@ -1,18 +1,20 @@
 <template>
-	<Header />
+	<div class="app">
+		<TheHeader />
 
-	<slot />
+		<slot />
 
-	<Footer />
+		<TheFooter />
 
-	<CookieAlert v-show="uiStore.cookieAlert" />
+		<CookieAlert v-show="uiStore.cookieAlert" />
+	</div>
 </template>
 
 <script setup lang="ts">
-import { useUserStore } from "~/stores/user.ts";
-import { useUIStore } from "~/stores/ui.ts";
+import { useUIStore } from "~/stores/ui";
+import { useUserStore } from "~/stores/user";
 
-import type { IUser } from "~/types/user.ts";
+import type { IUser } from "~/types/user";
 
 const userStore = useUserStore();
 const uiStore = useUIStore();

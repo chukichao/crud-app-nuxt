@@ -1,16 +1,18 @@
 <template>
-	<slot />
+	<div class="app">
+		<slot />
 
-	<CookieAlert v-show="uiStore.cookieAlert" />
+		<CookieAlert v-show="uiStore.cookieAlert" />
+	</div>
 </template>
 
 <script setup lang="ts">
 import { useStorage } from "../composables/useStorage";
 
-import { useUserStore } from "~/stores/user.ts";
-import { useUIStore } from "~/stores/ui.ts";
+import { useUIStore } from "~/stores/ui";
+import { useUserStore } from "~/stores/user";
 
-import type { IUser } from "~/types/user.ts";
+import type { IUser } from "~/types/user";
 
 const userStore = useUserStore();
 const uiStore = useUIStore();

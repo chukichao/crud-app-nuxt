@@ -2,18 +2,21 @@
 	<header class="header">
 		<nav>
 			<ul>
-				<Logo />
-				<li>
+				<TheLogo />
+				<li :class="{ active: $route.path === '/' }">
 					<NuxtLink to="/">Home</NuxtLink>
 				</li>
 
-				<li>
+				<li :class="{ active: $route.path === '/about' }">
 					<NuxtLink to="/about">About Us</NuxtLink>
 				</li>
 
-				<li v-if="userStore.auth">
+				<li v-if="userStore.auth" :class="{ active: $route.path === '/posts' }">
 					<NuxtLink
-						:to="`/posts?page=${postsStore.page}&limit=${postsStore.limit}`"
+						:to="{
+							path: '/posts',
+							query: { page: postsStore.page, limit: postsStore.limit },
+						}"
 						>Posts</NuxtLink
 					>
 				</li>
@@ -43,9 +46,9 @@
 </template>
 
 <script setup lang="ts">
-import { usePostsStore } from "~/stores/posts.ts";
-import { useUIStore } from "~/stores/ui.ts";
-import { useUserStore } from "~/stores/user.ts";
+import { usePostsStore } from "~/stores/posts";
+import { useUIStore } from "~/stores/ui";
+import { useUserStore } from "~/stores/user";
 
 const uiStore = useUIStore();
 const userStore = useUserStore();

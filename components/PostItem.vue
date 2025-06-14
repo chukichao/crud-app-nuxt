@@ -28,10 +28,10 @@
 </template>
 
 <script setup lang="ts">
-import { usePostsStore } from "~/stores/posts.ts";
-import { useUIStore } from "~/stores/ui.ts";
+import { usePostsStore } from "~/stores/posts";
+import { useUIStore } from "~/stores/ui";
 
-import type { IPost } from "~/types/post.ts";
+import type { IPost } from "~/types/post";
 
 const postsStore = usePostsStore();
 const uiStore = useUIStore();
