@@ -1,15 +1,15 @@
 <template>
-  <button>
-    <slot />
-  </button>
+	<button>
+		<slot />
+	</button>
 </template>
 
 <style scoped lang="scss">
 button {
-  padding: 0.5rem 1rem;
+	padding: 0.5rem 1rem;
 
-  background: none;
+	background: none;
 
-  cursor: pointer;
+	cursor: pointer;
 }
 </style>

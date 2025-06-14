@@ -1,33 +1,33 @@
 <template>
-  <main>
-    <h1 id="heading">Comments Page</h1>
+	<main>
+		<h1 id="heading">Comments Page</h1>
 
-    <div class="comments-list">
-      <div v-if="commentsStore.comments.length" class="comments-item">
-        <ul>
-          <li v-for="comment in commentsStore.comments" :key="comment.id">
-            <h3>{{ comment.id }}. {{ comment.name }}</h3>
-            <p>{{ comment.body }}</p>
-            <p>{{ comment.email }}</p>
-          </li>
-        </ul>
-      </div>
+		<div class="comments-list">
+			<div v-if="commentsStore.comments.length" class="comments-item">
+				<ul>
+					<li v-for="comment in commentsStore.comments" :key="comment.id">
+						<h3>{{ comment.id }}. {{ comment.name }}</h3>
+						<p>{{ comment.body }}</p>
+						<p>{{ comment.email }}</p>
+					</li>
+				</ul>
+			</div>
 
-      <div v-else>
-        <UILoader v-if="uiStore.isLoading" />
-        <h2 v-else>No comments yet</h2>
-      </div>
+			<div v-else>
+				<UILoader v-if="uiStore.isLoading" />
+				<h2 v-else>No comments yet</h2>
+			</div>
 
-      <UIButton
-        @click="
-          $router.push(
-            `/posts?page=${postsStore.page}&limit=${postsStore.limit}`,
-          )
-        "
-        >Back</UIButton
-      >
-    </div>
-  </main>
+			<UIButton
+				@click="
+					$router.push(
+						`/posts?page=${postsStore.page}&limit=${postsStore.limit}`,
+					)
+				"
+				>Back</UIButton
+			>
+		</div>
+	</main>
 </template>
 
 <script setup lang="ts">
@@ -36,8 +36,8 @@ import { useUIStore } from "~/stores/ui.ts";
 import { useCommentsStore } from "~/stores/сomments.ts";
 
 definePageMeta({
-  layout: "custom",
-  middleware: "auth" as any,
+	layout: "custom",
+	middleware: "auth" as any,
 });
 
 const commentsStore = useCommentsStore();
@@ -47,55 +47,55 @@ const postsStore = usePostsStore();
 const route = useRoute();
 
 const scrollToUp = () => {
-  const heading = document.getElementById("heading");
+	const heading = document.getElementById("heading");
 
-  if (heading) {
-    heading.scrollIntoView();
-  }
+	if (heading) {
+		heading.scrollIntoView();
+	}
 };
 
 onMounted(() => {
-  commentsStore.fetchComments(route.params.id as string);
-  scrollToUp();
+	commentsStore.fetchComments(route.params.id as string);
+	scrollToUp();
 });
 </script>
 
 <style scoped lang="scss">
 .comments-list {
-  text-align: center;
+	text-align: center;
 
-  h2 {
-    padding: 1.5rem;
+	h2 {
+		padding: 1.5rem;
 
-    font-size: 30px;
-  }
+		font-size: 30px;
+	}
 }
 
 .comments-item {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 
-  ul {
-    list-style: none;
+	ul {
+		list-style: none;
 
-    li {
-      margin: 2rem 0;
-    }
+		li {
+			margin: 2rem 0;
+		}
 
-    p {
-      padding: 1rem;
-    }
-  }
+		p {
+			padding: 1rem;
+		}
+	}
 
-  button {
-    align-self: flex-end;
+	button {
+		align-self: flex-end;
 
-    margin: 1rem;
+		margin: 1rem;
 
-    &:hover {
-      background: bisque;
-    }
-  }
+		&:hover {
+			background: bisque;
+		}
+	}
 }
 </style>

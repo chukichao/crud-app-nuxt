@@ -1,9 +1,9 @@
 <template>
-  <div class="modal" @click="uiStore.closeModal">
-    <div class="modal-body" @click.stop>
-      <slot />
-    </div>
-  </div>
+	<div class="modal" @click="uiStore.closeModal">
+		<div class="modal-body" @click.stop>
+			<slot />
+		</div>
+	</div>
 </template>
 
 <script setup lang="ts">
@@ -14,25 +14,25 @@ const uiStore = useUIStore();
 
 <style scoped lang="scss">
 .modal {
-  position: fixed;
-  inset: 0;
+	position: fixed;
+	inset: 0;
 
-  display: flex;
+	display: flex;
 
-  text-align: center;
+	text-align: center;
 
-  background: rgb(0 0 0 / 50%);
+	background: rgb(0 0 0 / 50%);
 
-  &-body {
-    min-width: 300px;
-    min-height: 50px;
+	&-body {
+		min-width: 300px;
+		min-height: 50px;
 
-    margin: auto;
-    padding: 3rem 6rem;
+		margin: auto;
+		padding: 3rem 6rem;
 
-    background-color: white;
-    border: 1px solid #333;
-    border-radius: 10px;
-  }
+		background-color: white;
+		border: 1px solid #333;
+		border-radius: 10px;
+	}
 }
 </style>

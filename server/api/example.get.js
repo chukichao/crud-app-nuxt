@@ -1,8 +1,8 @@
 export default defineEventHandler(() => {
-  return {
-    name: "John",
-    age: 42,
-  };
+	return {
+		name: "John",
+		age: 42,
+	};
 });
 
 // в компоненте

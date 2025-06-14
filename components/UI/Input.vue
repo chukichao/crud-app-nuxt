@@ -1,28 +1,28 @@
 <template>
-  <input
-    ref="input"
-    :value="modelValue"
-    @input="
-      $emit('update:modelValue', ($event.target as HTMLInputElement).value)
-    "
-  />
+	<input
+		ref="input"
+		:value="modelValue"
+		@input="
+			$emit('update:modelValue', ($event.target as HTMLInputElement).value)
+		"
+	/>
 </template>
 
 <script setup lang="ts">
 defineEmits(["update:modelValue"]);
 
 defineProps<{
-  modelValue: string | number | null;
+	modelValue: string | number | null;
 }>();
 </script>
 
 <style scoped lang="scss">
 input {
-  margin: 0.5rem 0;
-  padding: 0.5rem;
+	margin: 0.5rem 0;
+	padding: 0.5rem;
 
-  outline: none;
+	outline: none;
 
-  cursor: pointer;
+	cursor: pointer;
 }
 </style>
