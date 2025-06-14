@@ -1,39 +1,39 @@
 <template>
-  <select v-model="limit" @change="setLimit">
-    <option value="" disabled>limit</option>
-    <option v-for="option in options" :key="option.value" :value="option.value">
-      {{ option.title }}
-    </option>
-  </select>
+	<select v-model="limit" @change="setLimit">
+		<option value="" disabled>limit</option>
+		<option v-for="option in options" :key="option.value" :value="option.value">
+			{{ option.title }}
+		</option>
+	</select>
 </template>
 
 <script setup lang="ts">
-import { usePostsStore } from '~/stores/posts.ts';
+import { usePostsStore } from "~/stores/posts.ts";
 
 const router = useRouter();
 
 const postsStore = usePostsStore();
 
-const limit = ref('');
+const limit = ref("");
 const options = reactive([
-  { title: 5, value: 5 },
-  { title: 10, value: 10 },
-  { title: 25, value: 25 },
-  { title: 'all', value: 100 },
+	{ title: 5, value: 5 },
+	{ title: 10, value: 10 },
+	{ title: 25, value: 25 },
+	{ title: "all", value: 100 },
 ]);
 
 const updateQuery = () => {
-  router.replace({
-    query: {
-      page: postsStore.page,
-      limit: postsStore.limit,
-    },
-  });
+	router.replace({
+		query: {
+			page: postsStore.page,
+			limit: postsStore.limit,
+		},
+	});
 };
 
 const setLimit = (event: Event) => {
-  postsStore.setLimit(Number((event.target as HTMLSelectElement).value));
+	postsStore.setLimit(Number((event.target as HTMLSelectElement).value));
 
-  updateQuery();
+	updateQuery();
 };
 </script>
