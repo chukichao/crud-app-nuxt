@@ -1,75 +1,22 @@
-# Nuxt Minimal Starter
+# [CrudApp (Nuxt)](https://vue-project-nuxt.onrender.com)
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+[![Maintainability](https://qlty.sh/badges/9eb7d9f6-efa0-45f4-9ffd-4a549a6ff515/maintainability.svg)](https://qlty.sh/gh/chukichao/projects/vue-project-nuxt)
 
-## Setup
+### CRUD приложение для работы с постами с возможностью пагинации, поиска и фильтрации.
 
-Make sure to install dependencies:
+Доступ к основному приложению доступен только авторизованным пользователям. Для входа следует прописать `admin` во все поля формы входа, либо ввести _фейковые_ данные и зарегистрировать нового пользователя.
 
-```bash
-# npm
-npm install
+Приложение доступно по [ссылке](https://vue-project-nuxt.onrender.com)*, либо через клонирование данного репозитория (Node v22.9.0).
 
-# pnpm
-pnpm install
+*может потребоваться 10-15 секунд для запуска сборки на стороне ресурса render.com
 
-# yarn
-yarn install
+![crud](https://github.com/user-attachments/assets/82473ece-39ce-47d0-95d6-d47fe7fa8291)
 
-# bun
-bun install
-```
+_Установка:_
 
-## Development Server
+1. _Клонируйте данный репозиторий._
+2. _Установите необходимые зависимости (запустить команду npm install в корневой директории проекта)._
+3. _Соберите проект с помощью команды npm run build._
+4. _Запустите локальный сервер командой npm run dev._
 
-Start the development server on `http://localhost:3000`:
-
-```bash
-# npm
-npm run dev
-
-# pnpm
-pnpm dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+### Приятного пользования!
