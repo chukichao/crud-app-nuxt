@@ -1,5 +1,5 @@
 {
-  "name": "nuxt-app",
+  "name": "crud-app-nuxt",
   "version": "1.0.0",
   "description": "Educational project",
   "private": true,
@@ -14,14 +14,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/chukichao/vue-project-nuxt.git"
+    "url": "git+https://github.com/chukichao/crud-app-nuxt.git"
   },
   "author": "Maxim Chukichev",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/chukichao/vue-project-nuxt/issues"
+    "url": "https://github.com/chukichao/crud-app-nuxt/issues"
   },
-  "homepage": "https://github.com/chukichao/vue-project-nuxt#readme",
+  "homepage": "https://github.com/chukichao/crud-app-nuxt#readme",
   "dependencies": {
     "@pinia/nuxt": "^0.11.1",
     "axios": "^1.10.0",
