@@ -1,5 +1,10 @@
 <template>
 	<main>
+		<Head>
+			<Title>Comments id{{ route.params.id }} </Title>
+			<Meta name="Comments" content="list of comments" />
+		</Head>
+
 		<h1 id="heading">Comments Page</h1>
 
 		<div class="comments-list">

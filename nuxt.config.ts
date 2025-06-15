@@ -1,18 +1,19 @@
 export default defineNuxtConfig({
-	compatibilityDate: "2025-05-15",
-	devtools: { enabled: true },
-	css: ["~/assets/main.scss"],
 	app: {
 		head: {
-			title: "Nuxt",
+			title: "Nuxt App",
+			meta: [{ name: "description", content: "Educational project" }],
 		},
 	},
 	alias: {
 		assets: "/<rootDir>/assets",
 	},
+	css: ["~/assets/main.scss"],
+	modules: ["@pinia/nuxt"],
 	typescript: {
 		typeCheck: true,
 	},
-	modules: ["@pinia/nuxt"],
 	ssr: false,
+	compatibilityDate: "2025-05-15",
+	devtools: { enabled: true },
 });

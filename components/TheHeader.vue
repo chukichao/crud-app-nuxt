@@ -24,6 +24,8 @@
 		</nav>
 
 		<div v-if="userStore.auth">
+			<IconsAccount />
+			<span class="account">{{ userStore.auth.username }}</span>
 			<UIButton @click="uiStore.openModal('logout')">Logout</UIButton>
 		</div>
 
@@ -111,6 +113,12 @@ const logout = () => {
 
 .active {
 	font-weight: bold;
+}
+
+.account {
+	padding: 0.5rem;
+
+	cursor: default;
 }
 
 @media screen and (max-width: 600px) {

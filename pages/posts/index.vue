@@ -20,15 +20,18 @@
 		/>
 
 		<div class="filter">
-			<PagesLimit />
-			<UISelect v-model="selectedSort" :options="sortOptions" title="sort" />
+			<PagesLimit class="filter-limit" />
+			<UISelect
+				v-model="selectedSort"
+				class="filter-sort"
+				:options="sortOptions"
+				title="sort"
+			/>
 		</div>
 
-		<div class="add">
-			<UIButton title="Add new post" @click="uiStore.openModal('addPost')"
-				>+
-			</UIButton>
-		</div>
+		<UIButton title="Add new post" @click="uiStore.openModal('addPost')"
+			><IconsPlus class="add"
+		/></UIButton>
 
 		<UIModal v-if="uiStore.modal.type === 'addPost'">
 			<FormAddPost />
@@ -37,11 +40,17 @@
 </template>
 
 <script setup lang="ts">
+import { IconsPlus } from "#components";
 import { usePostsStore } from "~/stores/posts";
 import { useUIStore } from "~/stores/ui";
 
 definePageMeta({
 	middleware: "auth",
+});
+
+useHead({
+	title: "Crud App",
+	meta: [{ name: "Posts", content: "list of posts" }],
 });
 
 const postsStore = usePostsStore();
@@ -126,7 +135,9 @@ onMounted(() => {
 	width: 50px;
 	height: 50px;
 
-	background-color: bisque;
+	color: #555;
+
+	background-color: white;
 	border: 1px solid #333;
 	border-radius: 50%;
 
@@ -149,7 +160,11 @@ onMounted(() => {
 	bottom: 0;
 
 	select {
-		padding: 0.3rem;
+		padding: 0.4rem;
+
+		color: white;
+
+		background-color: #555;
 	}
 }
 </style>
