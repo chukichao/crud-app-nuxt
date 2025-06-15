@@ -1,18 +1,25 @@
 <template>
 	<main>
 		<div class="status">
-			<h1>This page was not found</h1>
-			<NuxtLink to="/">Go home page</NuxtLink>
+			<div>
+				<h1>This page was not found</h1>
+				<NuxtLink to="/">Go home page</NuxtLink>
+			</div>
 		</div>
 	</main>
 </template>
 
 <style scoped lang="scss">
 .status {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+
 	text-align: center;
 
 	h2 {
-		margin: 2rem;
+		margin: 3rem;
 	}
 
 	a {
