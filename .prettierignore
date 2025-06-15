@@ -14,5 +14,3 @@ dist/
 .nuxt
 .output
 CHANGELOG.md
-.vscode/settings.json
-.vscode/extensions.json

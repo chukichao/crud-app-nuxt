@@ -1,6 +1,9 @@
 eslint:
 	npx eslint .
 
+typescript:
+	npx nuxt typecheck
+
 prettier:
 	npx prettier --write assets/
 	npx prettier --write components/
@@ -17,6 +20,3 @@ stylelint:
 	npx stylelint --fix "components/*.{css,scss,vue}"
 	npx stylelint --fix "layouts/*.{css,scss,vue}"
 	npx stylelint --fix "pages/*.{css,scss,vue}"
-
-typescript:
-	npx nuxt typecheck
